@@ -11,7 +11,17 @@ public class AuxiliaArbitro {
         return arbitro;
     }
 
-    public static void getArbitroSelecao() { // lista os estadios para posterior seleção
+    public static void imprimeArbitro() { // lista os arbitros e suas funções
+        if(AuxiliaArbitro.i>0){
+            for (int j = 0;j<AuxiliaArbitro.i;j++){
+                System.out.println("Nome: "+AuxiliaArbitro.arbitro[j].getNome()+" Função: "+AuxiliaArbitro.arbitro[j].getFuncao());
+                }
+        }else{
+            System.out.println("Não existem arbitros cadastrados.");
+        }
+    }
+    
+    public static void getArbitroSelecao() { // lista os arbitros para posterior seleção
         if(AuxiliaArbitro.i>0){
             for (int j = 0;j<AuxiliaArbitro.i;j++){
                 System.out.println("Digite "+j+" para selecionar "+AuxiliaArbitro.arbitro[j].getNome());

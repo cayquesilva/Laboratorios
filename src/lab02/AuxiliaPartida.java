@@ -18,7 +18,10 @@ public class AuxiliaPartida {
     
     public static void imprimePartida() {
         for(int j=0;j<i;j++){ // se no lugar do I, eu colocar clube.lengh dá erro :/ perguntar ao professor!!!
-            System.out.println(AuxiliaPartida.partida[j].getData());
+            System.out.println("Partida "+j);
+            System.out.println("Mandante: "+getPartida()[j].getMandante());
+            System.out.println("Visitante: "+getPartida()[j].getVisitante());
+            System.out.println("Data: "+getPartida()[j].getData());
         }
     }
 

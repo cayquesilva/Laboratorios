@@ -6,18 +6,28 @@ public class TimeTeste {
     public static void main (String[] args){
         
         Scanner s = new Scanner(System.in);
+        Menu m = new Menu();
         
-        AuxiliaClube.setClube(new Clube()); // cria o objeto no vetor e o preenche.
-        AuxiliaClube.setClube(new Clube());
-        AuxiliaEstadio.setEstadio(new Estadio()); // cria o objeto no vetor e o preenche
-        //AuxiliaEstadio.setEstadio(new Estadio());
-        AuxiliaClube.imprimeClube(); // imprime os clubes que foram cadastrados
-        AuxiliaEstadio.getEstadioSelecao(); // lista os estadios disponiveis para seleção
-        AuxiliaEstadio.getTimeEstadio(AuxiliaEstadio.estadio[s.nextInt()]); // ao digitar um numero da seleção o estadio lista os times que possui.
-        AuxiliaJogador.setJogador(new Jogador());
-        AuxiliaComissao.setComissao(new ComissaoTecnica());
-        AuxiliaArbitro.setArbitro(new Arbitro());
-        AuxiliaPartida.setPartida(new Partida());
-        AuxiliaPartida.imprimePartida();
+        switch(m.chamaMenu()){
+            case 1: 
+                m.menuClube();
+            break;
+            
+            case 2:
+                m.menuEstadio();
+            break;
+            
+            case 3:
+                m.menuFuncionario();
+            break;
+            
+            case 4:
+                m.menuArbitro();
+            break;
+            
+            case 5:
+                m.menuPartida();
+            break;
+        }
     }
 }
