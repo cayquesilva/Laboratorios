@@ -23,9 +23,13 @@ public class AuxiliaComissao {
         AuxiliaComissao.comissao[i].setSalario(s.nextDouble());
         s.nextLine();
         System.out.println("Selecione o time que o jogador pertence");
-        AuxiliaClube.getClubeSelecao();
-        AuxiliaClube.clube[s.nextInt()].setFuncionario(AuxiliaComissao.comissao[i]);
-        s.nextLine();
-        i++;
+        if(AuxiliaClube.getClubeSelecao()==1){
+            AuxiliaClube.clube[s.nextInt()].setFuncionario(AuxiliaComissao.comissao[i]);
+            s.nextLine();
+            i++;
+        }else{
+            System.out.println("");
+            i++;
+        }
     }
 }

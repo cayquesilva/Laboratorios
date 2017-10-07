@@ -4,13 +4,22 @@ import java.util.Scanner;
 
 public class AuxiliaJogador {
     private static Jogador jogador[]=new Jogador[10];
-    private static int i=0;
+    private static int i=0,qnt=0;
     private static Scanner s = new Scanner(System.in);
 
     public static Jogador[] getJogador() {
         return jogador;
     }
+    
+    public static void setQntJogador(){
+        qnt++;
+    }
+    
+    public static int getQntJogador(){
+        return AuxiliaJogador.qnt;
+    }
 
+    
     public static void setJogador(Jogador jogador) {
         AuxiliaJogador.jogador[i]=jogador;
         System.out.println("Digite o nome do jogador");
@@ -25,9 +34,15 @@ public class AuxiliaJogador {
         AuxiliaJogador.jogador[i].setSalario(s.nextDouble());
         s.nextLine();
         System.out.println("Selecione o time que o jogador pertence");
-        AuxiliaClube.getClubeSelecao();
-        AuxiliaClube.clube[s.nextInt()].setFuncionario(AuxiliaJogador.jogador[i]);
-        s.nextLine();
-        i++;
+        if(AuxiliaClube.getClubeSelecao()==1){
+            AuxiliaClube.clube[s.nextInt()].setFuncionario(AuxiliaJogador.jogador[i]);
+            s.nextLine();
+            i++;
+            setQntJogador();
+        }else{
+            System.out.println("");
+            i++;
+            setQntJogador();
+        }
     }
 }

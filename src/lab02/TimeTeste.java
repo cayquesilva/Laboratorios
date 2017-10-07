@@ -7,7 +7,9 @@ public class TimeTeste {
         
         Scanner s = new Scanner(System.in);
         Menu m = new Menu();
+        int op=1;
         
+        do{
         switch(m.chamaMenu()){
             case 1: 
                 m.menuClube();
@@ -28,6 +30,14 @@ public class TimeTeste {
             case 5:
                 m.menuPartida();
             break;
+            
+            case 0:
+                System.out.println("Finalizando sistema...");
+                System.out.println("");
+                op=0;
+            break;
+                    
         }
+        }while(op!=0);
     }
 }

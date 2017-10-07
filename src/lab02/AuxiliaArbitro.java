@@ -21,13 +21,15 @@ public class AuxiliaArbitro {
         }
     }
     
-    public static void getArbitroSelecao() { // lista os arbitros para posterior seleção
+    public static int getArbitroSelecao() { // lista os arbitros para posterior seleção
         if(AuxiliaArbitro.i>0){
             for (int j = 0;j<AuxiliaArbitro.i;j++){
                 System.out.println("Digite "+j+" para selecionar "+AuxiliaArbitro.arbitro[j].getNome());
                 }
+            return 1;
         }else{
             System.out.println("Não existem arbitros cadastrados.");
+            return 0;
         }
     }
     

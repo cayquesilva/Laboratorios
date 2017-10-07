@@ -13,24 +13,28 @@ public class AuxiliaEstadio {
         return estadio;
     }
     
-    public static void getEstadioSelecao() { // lista os estadios para posterior seleção
+    public static int getEstadioSelecao() { // lista os estadios para posterior seleção
         if(AuxiliaEstadio.i>0){
             for (int j = 0;j<AuxiliaEstadio.i;j++){
                 System.out.println("Digite "+j+" para ver os times do "+AuxiliaEstadio.estadio[j].getNome());
                 }
+                return 1;
         }else{
             System.out.println("Não existem times nesse estádio!");
+            return 0;
         }
     }
    
     
-    public static void getTimeEstadio(Estadio e) {
+    public static int getTimeEstadio(Estadio e) {
         if(e.getQuantideTimes()>0){
         for (int j = 0; j < e.getQuantideTimes(); j++) {
             System.out.println("Clube: " + e.getTimes()[j].getNome());
             }
+        return 1;
         }else{
                 System.out.println("Não existem times nesse estádio.");
+                return 0;
             }
     }
 
@@ -38,14 +42,10 @@ public class AuxiliaEstadio {
         AuxiliaEstadio.estadio[i]=estadio;
         System.out.println("Digite o nome do estadio");
         AuxiliaEstadio.estadio[i].setNome(s.nextLine());
-        //System.out.println("Digite a cidade do estadio");
-        //AuxiliaEstadio.estadio[i].setCidade(s.nextLine());
-        //System.out.println("Digite o estado do estadio");
-        //AuxiliaEstadio.estadio[i].setEstado(s.nextLine());
-        System.out.println("Escolha o time que pertence ao estádio");
-        AuxiliaClube.getClubeSelecao();
-        AuxiliaEstadio.estadio[i].setTimes(AuxiliaClube.clube[s.nextInt()]);
-        s.nextLine();
+        System.out.println("Digite a cidade do estadio");
+        AuxiliaEstadio.estadio[i].setCidade(s.nextLine());
+        System.out.println("Digite o estado do estadio");
+        AuxiliaEstadio.estadio[i].setEstado(s.nextLine());
         i++;
 
     }
