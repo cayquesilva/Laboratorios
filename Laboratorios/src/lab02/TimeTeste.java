@@ -1,7 +1,5 @@
 package lab02;
 
-import java.util.Scanner;
-
 public class TimeTeste {
     public static void main (String[] args){
         
