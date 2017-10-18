@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class TimeTeste {
     public static void main (String[] args){
         
-        Scanner s = new Scanner(System.in);
         Menu m = new Menu();
         int op=1;
         
